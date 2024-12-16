@@ -3,6 +3,7 @@ import FifthComponent from "./Components/FifthComponent";
 import FirstComponent from "./Components/FirstComponent";
 import FourthComponent from "./Components/FourthComponent";
 import SecondComponent from "./Components/SecondComponent";
+import SixthComponent from "./Components/SixthComponent";
 import ThirdComponent from "./Components/ThirdComponent";
 
 function App() {
@@ -40,7 +41,12 @@ function App() {
       gender: 'Male',
     },
   ]
-
+  const employeeDetails = [
+    { username: "Sankar", age: 45, profission: "UI and UX designer", address:"Miyapur", gender: 'Male' },
+    { username: "Madhulika", age: 22, profission: "Teacher", address:"Uppal", gender: 'Female' },
+    { username: "Jayadeep", age: 17, profission: "Fullstack Developer", address:"Koti", gender: 'Male' },
+    { username: "Lakshman", age: 32, profission: "Backend Developer", address:"Malakpet", gender: 'Male' },
+  ];
   return (
     <>
       <h1>Destructuring Props in React</h1>
@@ -66,6 +72,10 @@ function App() {
         <div className="col-md-2" key={index}>
           <FifthComponent {...employee} />       
         </div>     
+        ))}
+
+        {employeeDetails.map((user,index)=>(
+          <SixthComponent {...user}/>
         ))}
         </div>
     </>
